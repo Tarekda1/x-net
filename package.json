@@ -1,0 +1,93 @@
+{
+  "name": "test-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/moment": "^2.0.1",
+    "@formatjs/intl-relativetimeformat": "^4.5.9",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/pickers": "^3.2.10",
+    "a2hs": "^1.1.4",
+    "babel-eslint": "^10.0.3",
+    "chart.js": "^2.9.3",
+    "dialog-polyfill": "^0.5.0",
+    "downshift": "^4.0.8",
+    "fireform": "^1.0.0",
+    "firekit": "^1.0.32",
+    "firekit-provider": "^1.0.2",
+    "github-markdown-css": "^3.0.1",
+    "history": "^4.10.1",
+    "intl": "^1.2.5",
+    "intl-locales-supported": "^1.8.4",
+    "intl-pluralrules": "^1.1.1",
+    "match-sorter": "^4.0.2",
+    "material-ui-filter": "^3.1.3",
+    "material-ui-image": "^3.2.2",
+    "material-ui-pickers": "^2.2.4",
+    "moment": "^2.24.0",
+    "muishift": "^1.1.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-chartjs-2": "^2.9.0",
+    "react-countup": "^4.3.3",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.12.0",
+    "react-dropzone": "^10.2.1",
+    "react-helmet": "^5.2.1",
+    "react-image-cropper": "^1.3.0",
+    "react-intl": "^3.11.0",
+    "react-list": "^0.8.13",
+    "react-loadable": "^5.5.0",
+    "react-markdown": "^4.3.1",
+    "react-mic": "^12.4.1",
+    "react-player": "^1.14.2",
+    "react-redux": "^7.1.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "react-toastify": "^5.5.0",
+    "react-virtualized": "^9.21.2",
+    "redux": "^4.0.5",
+    "redux-form": "^8.2.6",
+    "redux-form-material-ui": "^5.0.0-beta.3",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.0.1"
+  },
+  "scripts": {
+    "check": "npm-check -s -u",
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "start": "react-scripts start --no-watch --watch=false --watchAll=false",
+    "standard": "standard src/**/*.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": "https://github.com/Tarekda1/x-net.git",
+  "keywords": [
+    "react-most-wanted",
+    "react",
+    "redux",
+    "firebase"
+  ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
