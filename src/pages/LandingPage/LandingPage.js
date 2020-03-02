@@ -5,8 +5,11 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import IconButton from '@material-ui/core/IconButton'
 import Paper from '@material-ui/core/Paper';
+import { List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
 import LockIcon from '@material-ui/icons/Lock'
+import InboxIcon from '@material-ui/icons/Inbox'
+import DraftsIcon from '@material-ui/icons/Drafts';
 import React, { useEffect } from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
 import Tooltip from '@material-ui/core/Tooltip'
@@ -133,7 +136,6 @@ const styles = theme => ({
   },
   card: {
     minWidth: 275,
-    maxWidth: 350,
     marginTop: 15,
     [theme.breakpoints.only('xs')]: {
       width: '100%',
@@ -217,6 +219,42 @@ const styles = theme => ({
   },
   mainCard: {
     display: 'flex', padding: 0, justifyContent: 'spaceBetween'
+  },
+  planTitle: {
+    fontSize: "30px",
+    color: "#255aa8",
+    transition: ".3s",
+  },
+  prisingHead: {
+    margin: "15px 0 15px 0",
+    display: "flex",
+    justifyContent: "center"
+  },
+  redR: {
+
+  },
+  priceValue: {
+    background: "#255aa8 none repeat scroll 0 0",
+    color: "#fff",
+    fontSize: "37px",
+    transform: "rotate(0deg)",
+    transition: ".3s",
+    lineHeight: "85px",
+    display: "flex",
+    justifyContent: "center"
+  },
+  duration: {
+    verticalAlign: "baseline",
+    borrom: 0,
+  },
+  prisingFooter: {
+    display: "flex",
+    flex: "1",
+    justifyContent: "center"
+  },
+  pricingBtn: {
+    borderColor: "#255aa8",
+    transition: ".3s",
   }
 })
 
@@ -321,7 +359,7 @@ const LandingPage = ({ classes, history, theme }) => {
       </AppBar>
       <div className={classes.root}>
         <div className={classes.hero}>
-          <div className={classes.content}>
+          <main id="main" className={classes.content}>
             <section id="banner">
               <img
                 src="/4g-winter.jpg"
@@ -414,60 +452,167 @@ const LandingPage = ({ classes, history, theme }) => {
                   </Grid>
                 </Grid>
               </section>
-              <section className={classes.cardsContent} id="packages">
-                <Grid container spacing={3}>
-                  <Grid item sm={4} xs={12}>
-                    <Card className={classes.card}>
-                      <CardContent>
-                        <div class="single-price-table b-shadow text-center">
-                          <div class="prising-head">
-                            <h4 class="plan-title">4M / <span class="red-r"> 30GB</span></h4>
-                          </div>
-                          <div class="prising-content">
-                            <div class="price-tage-wrap-three">
-                              <h4 class="price-value">18,000 LBP<sub class="duration"> /m</sub></h4>
-                            </div>
-                            <ul class="table-content">
-                              <li><i class="fa fa-check" aria-hidden="true"></i>4 MB Speed</li>
-                              <li><i class="fa fa-check" aria-hidden="true"></i>30 GB of Download/Upload</li>
-                              <li><i class="fa fa-check" aria-hidden="true"></i>18,000 LBP/Monthly Fees</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </CardContent>
-                      <CardActions>
-                        <div class="prising-footer">
-                          <a href="adsl.html#plans" class="pricing-btn button">Read More</a>
-                        </div>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item sm={4} xs={12}>
-                    <Card className={classes.card}>
-                      <CardContent>
-
-                      </CardContent>
-                      <CardActions>
-
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                  <Grid item sm={4} xs={12}>
-                    <Card className={classes.card}>
-                      <CardContent>
-
-                      </CardContent>
-                      <CardActions>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                </Grid>
-              </section>
             </Container>
-          </div>
+            <section class="sectionContent section-padding section-no-margin" id="packages">
+              <div class="section-header">
+                <Typography component="h2" variant="h2" class="sectionTitle">Our Packages</Typography>
+              </div>
+              <Grid container spacing={3}>
+                <Grid item sm={4} xs={12}>
+                  <Card className={classes.card}>
+                    <CardContent style={{ paddingBottom: "0" }}>
+                      <div class="single-price-table b-shadow text-center">
+                        <div className={classes.prisingHead}>
+                          <h4 className={classes.planTitle}>4M / <span className={classes.redR}> 30GB</span></h4>
+                        </div>
+                        <div class="prising-content">
+                          <div class="price-tage-wrap-three">
+                            <Typography component="h4" variant="h4" className={classes.priceValue}>
+                              18,000 LBP<sub className={classes.duration}> /m</sub>
+                            </Typography>
+                          </div>
+                          <List component="ul" style={{}} aria-label="main mailbox folders">
+                            <ListItem>
+                              <ListItemIcon>
+                                <InboxIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="4 MB Speed" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="30 GB of Download/Upload" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="18,000 LBP/Monthly Fees" />
+                            </ListItem>
+                            <Divider />
+                          </List>
+                        </div>
+                      </div>
+                    </CardContent>
+                    <CardActions>
+                      <div className={classes.prisingFooter}>
+                        <Button href="adsl.html#plans" variant="outlined"
+                          className={classes.pricingBtn} disableElevation>Read More</Button>
+                      </div>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                  <Card className={classes.card}>
+                    <CardContent style={{ paddingBottom: "0" }}>
+                      <div class="single-price-table b-shadow text-center">
+                        <div className={classes.prisingHead}>
+                          <h4 className={classes.planTitle}>4M / <span className={classes.redR}> 30GB</span></h4>
+                        </div>
+                        <div class="prising-content">
+                          <div class="price-tage-wrap-three">
+                            <Typography component="h4" variant="h4" className={classes.priceValue}>
+                              18,000 LBP<sub className={classes.duration}> /m</sub>
+                            </Typography>
+                          </div>
+                          <List component="ul" style={{}} aria-label="main mailbox folders">
+                            <ListItem>
+                              <ListItemIcon>
+                                <InboxIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="4 MB Speed" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="30 GB of Download/Upload" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="18,000 LBP/Monthly Fees" />
+                            </ListItem>
+                            <Divider />
+                          </List>
+                        </div>
+                      </div>
+                    </CardContent>
+                    <CardActions>
+                      <div className={classes.prisingFooter}>
+                        <Button href="adsl.html#plans" variant="outlined"
+                          className={classes.pricingBtn} disableElevation>Read More</Button>
+                      </div>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                  <Card className={classes.card}>
+                    <CardContent style={{ paddingBottom: "0" }}>
+                      <div class="single-price-table b-shadow text-center">
+                        <div className={classes.prisingHead}>
+                          <h4 className={classes.planTitle}>4M / <span className={classes.redR}> 30GB</span></h4>
+                        </div>
+                        <div class="prising-content">
+                          <div class="price-tage-wrap-three">
+                            <Typography component="h4" variant="h4" className={classes.priceValue}>
+                              18,000 LBP<sub className={classes.duration}> /m</sub>
+                            </Typography>
+                          </div>
+                          <List component="ul" style={{}} aria-label="main mailbox folders">
+                            <ListItem>
+                              <ListItemIcon>
+                                <InboxIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="4 MB Speed" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="30 GB of Download/Upload" />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                              <ListItemIcon>
+                                <DraftsIcon />
+                              </ListItemIcon>
+                              <ListItemText primary="18,000 LBP/Monthly Fees" />
+                            </ListItem>
+                            <Divider />
+                          </List>
+                        </div>
+                      </div>
+                    </CardContent>
+                    <CardActions>
+                      <div className={classes.prisingFooter}>
+                        <Button href="adsl.html#plans" variant="outlined"
+                          className={classes.pricingBtn} disableElevation>Read More</Button>
+                      </div>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              </Grid>
+            </section>
+            <section className={classes.cardsContent} class="sectionsection-padding section-no-margin" id="web-design">
+              <div class="section-header">
+                <Typography component="h2" variant="h2" class="sectionTitle">Web & Graphic Design</Typography>
+              </div>
+            </section>
+          </main>
+          <footer>
+
+          </footer>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
