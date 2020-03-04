@@ -3,9 +3,10 @@ import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
+import Image from 'material-ui-image'
 import IconButton from '@material-ui/core/IconButton'
 import Paper from '@material-ui/core/Paper';
-import { List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core'
+import { List, ListItem, ListItemIcon, ListItemText, Divider, Box } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
 import LockIcon from '@material-ui/icons/Lock'
 import InboxIcon from '@material-ui/icons/Inbox'
@@ -455,7 +456,7 @@ const LandingPage = ({ classes, history, theme }) => {
             </Container>
             <section class="sectionContent section-padding section-no-margin" id="packages">
               <div class="section-header">
-                <Typography component="h2" variant="h2" class="sectionTitle">Our Packages</Typography>
+                <Typography component="h2" variant="h2" class="section-title">Our Packages</Typography>
               </div>
               <Grid container spacing={3}>
                 <Grid item sm={4} xs={12}>
@@ -601,10 +602,48 @@ const LandingPage = ({ classes, history, theme }) => {
                 </Grid>
               </Grid>
             </section>
-            <section className={classes.cardsContent} class="sectionsection-padding section-no-margin" id="web-design">
+            <section class="sectionContent section-padding section-no-margin" id="web-design">
               <div class="section-header">
                 <Typography component="h2" variant="h2" class="sectionTitle">Web & Graphic Design</Typography>
               </div>
+              <Grid container spacing={3}>
+                <Grid item sm={4} xs={12}>
+                  <Box component="div" display="block" class="portfolio-item" >
+                    <Box class="overlay"></Box>
+                    <Box class="info">
+                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
+                      <Link href="https://stci-lb.com/" button>check website</Link>
+                    </Box>
+                    <Box class="media-wrapper">
+                      <img src="./work11.jpg" alt="Société Tabbara" imageStyle={{ height: 'auto', }} />
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                  <Box component="div" display="block" class="portfolio-item">
+                    <Box class="overlay"></Box>
+                    <Box class="info">
+                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
+                      <Link href="https://stci-lb.com/" button>check website</Link>
+                    </Box>
+                    <Box class="media-wrapper">
+                      <img src="./work11.jpg" alt="Société Tabbara" />
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                  <Box component="div" display="block" class="portfolio-item">
+                    <Box class="overlay"></Box>
+                    <Box class="info">
+                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
+                      <Link href="https://stci-lb.com/" button>check website</Link>
+                    </Box>
+                    <Box class="media-wrapper">
+                      <img src="./work11.jpg" alt="Société Tabbara" imageStyle={{ height: 'auto' }} />
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
             </section>
           </main>
           <footer>

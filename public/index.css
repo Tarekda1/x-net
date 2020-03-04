@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center center;
 }
 
-.sectionTitle{
+.section-title{
   display: flex;
   align-self: flex-start;
   position: relative;
@@ -95,4 +95,58 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #255aa8;
     height: 5px;
     width: 50px;
+    bottom:-9px;
+}
+
+.portfolio-item img {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  max-width: 100%;
+}
+
+.portfolio-item .overlay, .portfolio-item .info {
+  -moz-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.portfolio-item .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(64, 109, 164, 0.9);
+}
+
+.portfolio-item .info {
+  position: absolute;
+  top: 50%;
+  margin-top: -49px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.portfolio-item:hover img {
+  -moz-transform: scale(1.3, 1.3);
+  -ms-transform: scale(1.3, 1.3);
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+.portfolio-item:hover .overlay, .portfolio-item:hover .info {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  z-index: 1;
+}
+
+.portfolio-item .media-wrapper {
+  overflow: hidden;
 }
