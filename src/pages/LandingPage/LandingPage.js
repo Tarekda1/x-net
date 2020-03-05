@@ -256,6 +256,21 @@ const styles = theme => ({
   pricingBtn: {
     borderColor: "#255aa8",
     transition: ".3s",
+  },
+  marginTop15: {
+    marginTop: "15px"
+  },
+  text: {
+    ": after": {
+      content: " ",
+      position: "absolute",
+      left: "13px",
+      bottom: "100%",
+      borderLeft: "10px solid transparent",
+      borderRight: "10px solid transparent",
+      borderBottom: "10px solid rgba(0, 0, 0, 0.1)",
+      marginBottom: "1px",
+    }
   }
 })
 
@@ -266,6 +281,7 @@ font-size: 14px;
 color: #de3130;
 margin-top: 10px;
 text-transform: capitalize;
+text-decoration:none;
 &:hover{
   color:#255aa8;
   cursor:pointer;
@@ -399,7 +415,7 @@ const LandingPage = ({ classes, history, theme }) => {
                         </span>
                         <div className={classes.featureCard}>
                           <Typography component="h4" variant="subtitle1" className={classes.featureTitle}>
-                            Home Internet
+                            Corporate Internet
                         </Typography>
                           <Typography component="p" variant="body2" className={classes.description}>
                             IDM Fiber is the latest and fastest Internet access
@@ -459,7 +475,7 @@ const LandingPage = ({ classes, history, theme }) => {
                 <Typography component="h2" variant="h2" class="section-title">Our Packages</Typography>
               </div>
               <Grid container spacing={3}>
-                <Grid item sm={4} xs={12}>
+                <Grid item md={4} sm={6} xs={12}>
                   <Card className={classes.card}>
                     <CardContent style={{ paddingBottom: "0" }}>
                       <div class="single-price-table b-shadow text-center">
@@ -506,7 +522,7 @@ const LandingPage = ({ classes, history, theme }) => {
                     </CardActions>
                   </Card>
                 </Grid>
-                <Grid item sm={4} xs={12}>
+                <Grid item md={4} sm={6} xs={12}>
                   <Card className={classes.card}>
                     <CardContent style={{ paddingBottom: "0" }}>
                       <div class="single-price-table b-shadow text-center">
@@ -553,7 +569,7 @@ const LandingPage = ({ classes, history, theme }) => {
                     </CardActions>
                   </Card>
                 </Grid>
-                <Grid item sm={4} xs={12}>
+                <Grid item md={4} sm={6} xs={12}>
                   <Card className={classes.card}>
                     <CardContent style={{ paddingBottom: "0" }}>
                       <div class="single-price-table b-shadow text-center">
@@ -604,9 +620,9 @@ const LandingPage = ({ classes, history, theme }) => {
             </section>
             <section class="sectionContent section-padding section-no-margin" id="web-design">
               <div class="section-header">
-                <Typography component="h2" variant="h2" class="sectionTitle">Web & Graphic Design</Typography>
+                <Typography component="h2" variant="h2" class="section-title">Web & Graphic Design</Typography>
               </div>
-              <Grid container spacing={3}>
+              <Grid container spacing={3} className={classes.marginTop15}>
                 <Grid item sm={4} xs={12}>
                   <Box component="div" display="block" class="portfolio-item" >
                     <Box class="overlay"></Box>
@@ -615,7 +631,7 @@ const LandingPage = ({ classes, history, theme }) => {
                       <Link href="https://stci-lb.com/" button>check website</Link>
                     </Box>
                     <Box class="media-wrapper">
-                      <img src="./work11.jpg" alt="Société Tabbara" imageStyle={{ height: 'auto', }} />
+                      <img src="./work11.jpg" alt="Société Tabbara" />
                     </Box>
                   </Box>
                 </Grid>
@@ -645,9 +661,48 @@ const LandingPage = ({ classes, history, theme }) => {
                 </Grid>
               </Grid>
             </section>
+            <section class="sectionContent section-padding section-no-margin" id="web-design">
+              <Box class="section-header">
+                <Typography component="h2" variant="h2" class="section-title">Latest Tech News</Typography>
+              </Box>
+              <Grid container spacing={3} className={classes.marginTop15}>
+                <Grid item sm={4} xs={12}>
+                  <Box class="review-wrap">
+                    <Box class="review">
+                      <figure class="review-meta">
+                        <figcaption class="info">
+                          <Typography component="h6" varitant="h6" className={classes.name}>
+                            <Link href="#">Internet in 48Hrs</Link>
+                          </Typography>
+                          <span class="meta"><em>November, 2019</em></span>
+                        </figcaption>
+                      </figure>
+                      <Card square={true} elevation={4} variant="inlined" className={classes.text}>
+                        <Box style={{ padding: "10px" }}>
+                          <CardContent style={{ paddingBottom: "5px" }}>
+                            <Typography component="p" variant="body2">Are you applying for ADSL and have no Internet connection? Are you switching to IDM ADSL? As you know,
+                            a new ADSL service requires some time to be up and running,
+                            IDM aims to provide you an alternative and immediate Internet connection within 48hrs.
+                            </Typography>
+                          </CardContent>
+                          <CardActions style={{ paddingLeft: "16px" }}>
+                            <LinkArrowHover style={{ display: "block", padding: "0px", margin: "0" }} href="https://idm.net.lb/adsl.html#special-offers"
+                            >Read More
+                          </LinkArrowHover>
+                          </CardActions>
+                        </Box>
+                      </Card>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                </Grid>
+              </Grid>
+            </section>
           </main>
           <footer>
-
           </footer>
         </div>
       </div >
