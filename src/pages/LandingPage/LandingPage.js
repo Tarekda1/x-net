@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import LockIcon from '@material-ui/icons/Lock'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DraftsIcon from '@material-ui/icons/Drafts';
+import PhoneIcon from '@material-ui/icons/Phone'
 import React, { useEffect } from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
 import Tooltip from '@material-ui/core/Tooltip'
@@ -26,6 +27,7 @@ import messages_es from './es.json'
 import messages_ru from './ru.json'
 import parseLanguages, { formatMessage } from '../../rmw-shell/utils/localeTools'
 import { Link, Container } from '@material-ui/core'
+
 
 const messageSources = {
   de: messages_de,
@@ -260,23 +262,14 @@ const styles = theme => ({
   marginTop15: {
     marginTop: "15px"
   },
-  text: {
-    ": after": {
-      content: " ",
-      position: "absolute",
-      left: "13px",
-      bottom: "100%",
-      borderLeft: "10px solid transparent",
-      borderRight: "10px solid transparent",
-      borderBottom: "10px solid rgba(0, 0, 0, 0.1)",
-      marginBottom: "1px",
-    }
+  name: {
+    color: 'black'
   }
 })
 
 const LinkArrowHover = styled.a`
 display: inline-block;
-fontweight: bold;
+font-weight: bold;
 font-size: 14px;
 color: #de3130;
 margin-top: 10px;
@@ -290,7 +283,7 @@ text-decoration:none;
   color: inherit;
   content: "navigate_next";
   font-family: "Material Icons"; 
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   line-height: normal;
   margin-left: 0px;
@@ -620,18 +613,17 @@ const LandingPage = ({ classes, history, theme }) => {
             </section>
             <section class="sectionContent section-padding section-no-margin" id="web-design">
               <div class="section-header">
-                <Typography component="h2" variant="h2" class="section-title">Web & Graphic Design</Typography>
+                <Typography component="h2" variant="h2" class="section-title">Services</Typography>
               </div>
               <Grid container spacing={3} className={classes.marginTop15}>
                 <Grid item sm={4} xs={12}>
                   <Box component="div" display="block" class="portfolio-item" >
                     <Box class="overlay"></Box>
                     <Box class="info">
-                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
-                      <Link href="https://stci-lb.com/" button>check website</Link>
+                      <Typography component="h4" variant="h4" className="title">StarzPlay</Typography>
                     </Box>
                     <Box class="media-wrapper">
-                      <img src="./work11.jpg" alt="Société Tabbara" />
+                      <img src="./starz-play.jpg" alt="Société Tabbara" />
                     </Box>
                   </Box>
                 </Grid>
@@ -639,11 +631,10 @@ const LandingPage = ({ classes, history, theme }) => {
                   <Box component="div" display="block" class="portfolio-item">
                     <Box class="overlay"></Box>
                     <Box class="info">
-                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
-                      <Link href="https://stci-lb.com/" button>check website</Link>
+                      <Typography component="h4" variant="h4" className="title">Reliable Internet</Typography>
                     </Box>
                     <Box class="media-wrapper">
-                      <img src="./work11.jpg" alt="Société Tabbara" />
+                      <img src="./starz-play.jpg" alt="Société Tabbara" />
                     </Box>
                   </Box>
                 </Grid>
@@ -651,11 +642,10 @@ const LandingPage = ({ classes, history, theme }) => {
                   <Box component="div" display="block" class="portfolio-item">
                     <Box class="overlay"></Box>
                     <Box class="info">
-                      <Typography component="h4" variant="h4" className="title">Société Tabbara</Typography>
-                      <Link href="https://stci-lb.com/" button>check website</Link>
+                      <Typography component="h4" variant="h4" className="title">Low Ping</Typography>
                     </Box>
                     <Box class="media-wrapper">
-                      <img src="./work11.jpg" alt="Société Tabbara" imageStyle={{ height: 'auto' }} />
+                      <img src="./starz-play.jpg" alt="Société Tabbara" imageStyle={{ height: 'auto' }} />
                     </Box>
                   </Box>
                 </Grid>
@@ -670,16 +660,16 @@ const LandingPage = ({ classes, history, theme }) => {
                   <Box class="review-wrap">
                     <Box class="review">
                       <figure class="review-meta">
-                        <figcaption class="info">
-                          <Typography component="h6" varitant="h6" className={classes.name}>
-                            <Link href="#">Internet in 48Hrs</Link>
+                        <figcaption class="info red">
+                          <Typography component="h5" variant="h6">
+                            <Link className={classes.name} href="#">Internet in 48Hrs</Link>
                           </Typography>
-                          <span class="meta"><em>November, 2019</em></span>
+                          <Typography component="span" variant="h6" className="meta"><em>November, 2019</em></Typography>
                         </figcaption>
                       </figure>
-                      <Card square={true} elevation={4} variant="inlined" className={classes.text}>
-                        <Box style={{ padding: "10px" }}>
-                          <CardContent style={{ paddingBottom: "5px" }}>
+                      <Card square={true} elevation={4} variant="elevation">
+                        <Box style={{ padding: "10px" }} >
+                          <CardContent style={{ paddingBottom: "5px" }} >
                             <Typography component="p" variant="body2">Are you applying for ADSL and have no Internet connection? Are you switching to IDM ADSL? As you know,
                             a new ADSL service requires some time to be up and running,
                             IDM aims to provide you an alternative and immediate Internet connection within 48hrs.
@@ -696,17 +686,83 @@ const LandingPage = ({ classes, history, theme }) => {
                   </Box>
                 </Grid>
                 <Grid item sm={4} xs={12}>
+                  <Box class="review-wrap">
+                    <Box class="review">
+                      <figure class="review-meta">
+                        <figcaption class="info blue">
+                          <Typography component="h5" variant="h6">
+                            <Link className={classes.name} href="#">Internet in 48Hrs</Link>
+                          </Typography>
+                          <Typography component="span" variant="h6" className="meta"><em>November, 2019</em></Typography>
+                        </figcaption>
+                      </figure>
+                      <Card square={true} elevation={4} variant="elevation">
+                        <Box style={{ padding: "10px" }} >
+                          <CardContent style={{ paddingBottom: "5px" }} >
+                            <Typography component="p" variant="body2">Are you applying for ADSL and have no Internet connection? Are you switching to IDM ADSL? As you know,
+                            a new ADSL service requires some time to be up and running,
+                            IDM aims to provide you an alternative and immediate Internet connection within 48hrs.
+                            </Typography>
+                          </CardContent>
+                          <CardActions style={{ paddingLeft: "16px" }}>
+                            <LinkArrowHover style={{ display: "block", padding: "0px", margin: "0" }} href="https://idm.net.lb/adsl.html#special-offers"
+                            >Read More
+                          </LinkArrowHover>
+                          </CardActions>
+                        </Box>
+                      </Card>
+                    </Box>
+                  </Box>
                 </Grid>
                 <Grid item sm={4} xs={12}>
+                  <Box class="review-wrap">
+                    <Box class="review">
+                      <figure class="review-meta">
+                        <figcaption class="info orange">
+                          <Typography component="h5" variant="h6">
+                            <Link className={classes.name} href="#">Internet in 48Hrs</Link>
+                          </Typography>
+                          <Typography component="span" variant="h6" className="meta"><em>November, 2019</em></Typography>
+                        </figcaption>
+                      </figure>
+                      <Card square={true} elevation={4} variant="elevation">
+                        <Box style={{ padding: "10px" }} >
+                          <CardContent style={{ paddingBottom: "5px" }} >
+                            <Typography component="p" variant="body2">Are you applying for ADSL and have no Internet connection? Are you switching to IDM ADSL? As you know,
+                            a new ADSL service requires some time to be up and running,
+                            IDM aims to provide you an alternative and immediate Internet connection within 48hrs.
+                            </Typography>
+                          </CardContent>
+                          <CardActions style={{ paddingLeft: "16px" }}>
+                            <LinkArrowHover style={{ display: "block", padding: "0px", margin: "0" }} href="https://idm.net.lb/adsl.html#special-offers"
+                            >Read More
+                          </LinkArrowHover>
+                          </CardActions>
+                        </Box>
+                      </Card>
+                    </Box>
+                  </Box>
                 </Grid>
               </Grid>
+            </section>
+            <section id="support">
+              <Box style={{
+                display: 'flex', alignItems: 'center',
+                justifyContent: 'center', flex: '1',
+                backgroundColor: '#ebebeb', padding: '25px 0'
+              }}>
+                <PhoneIcon style={{ fontSize: '1.8rem', paddingRight: '10px' }} />
+                <Typography component="h3" style={{ color: '#255aa8' }}
+                  variant="h5">Residential Support 24/7 call us at 1234467
+                </Typography>
+              </Box>
             </section>
           </main>
           <footer>
           </footer>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   )
 }
 

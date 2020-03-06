@@ -157,3 +157,37 @@ h1, h2, h3, h4, h5, h6 {
 .review-wrap .review-meta .info {
   overflow: hidden;
 }
+
+.review-meta .info{
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.review-meta .info.red{
+  border-left: 10px solid #de3130;
+}
+
+.review-meta .info.blue{
+  border-left: 10px solid blue;
+}
+
+.review-meta .info.orange{
+  border-left: 10px solid orange;
+}
+
+.text::after{
+  content: "";
+  position: absolute;
+  left: 13px;
+  bottom: 100%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1px;
+}
+
+.meta {
+  color: #999999;
+  font-size: .9em !important;
+  padding-left: 2px;
+}
