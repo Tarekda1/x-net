@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-padding{
-  padding: 20px 30px;
+  padding: 20px 40px;
 }
 
 .section-no-margin{
@@ -190,4 +190,62 @@ h1, h2, h3, h4, h5, h6 {
   color: #999999;
   font-size: .9em !important;
   padding-left: 2px;
+}
+
+/***** social bar ***/
+.bar-content{
+  background: #ebebeb;
+  padding:10px 0px;
+}
+
+.list-circles{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list-circles a {
+  display: flex;
+  line-height: 53px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 53px;
+  height: 53px;
+  margin: 0 5px;
+  transition: color .5s, background .5s;
+}
+
+.socialIcon{
+  width: 35px !important;
+  fill:#255aa8 !important;
+}
+
+.list-circles a:hover { color: #fff; background: #000; }
+
+/** footer **/
+footer{
+  background: #255aa8;
+}
+
+.footerHeading{
+  color:white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contactList{
+  display: list-item;
+  list-style: disc !important;
+  color: white;
+  margin: 0px 15px !important;
+}
+
+.contactList > li{
+ color: white;
+ text-decoration: dotted;
+ font-size: 13px;
 }

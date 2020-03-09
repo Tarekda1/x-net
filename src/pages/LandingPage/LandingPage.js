@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import LockIcon from '@material-ui/icons/Lock'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DraftsIcon from '@material-ui/icons/Drafts';
+import { Facebook, Twitter, Instagram } from '@material-ui/icons';
 import PhoneIcon from '@material-ui/icons/Phone'
 import React, { useEffect } from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -464,8 +465,8 @@ const LandingPage = ({ classes, history, theme }) => {
               </section>
             </Container>
             <section class="sectionContent section-padding section-no-margin" id="packages">
-              <div class="section-header">
-                <Typography component="h2" variant="h2" class="section-title">Our Packages</Typography>
+              <div className="section-header">
+                <Typography component="h2" variant="h2" className="section-title">Our Packages</Typography>
               </div>
               <Grid container spacing={3}>
                 <Grid item md={4} sm={6} xs={12}>
@@ -745,7 +746,7 @@ const LandingPage = ({ classes, history, theme }) => {
                 </Grid>
               </Grid>
             </section>
-            <section id="support">
+            {/* <section id="support">
               <Box style={{
                 display: 'flex', alignItems: 'center',
                 justifyContent: 'center', flex: '1',
@@ -756,10 +757,63 @@ const LandingPage = ({ classes, history, theme }) => {
                   variant="h5">Residential Support 24/7 call us at 1234467
                 </Typography>
               </Box>
+            </section> */}
+            <section id="socialmedia-bar">
+              <Box class="bar">
+                <Box class="bar-content">
+                  <span class="bar-separator"></span>
+                  <Box class="bar-content-inner">
+                    <Box class="list-circles">
+                      <Link href="https://www.facebook.com/mobi.tm" target="_blank">
+                        <Facebook className="socialIcon" />
+                      </Link>
+                      <Link href="https://www.instagram.com/mobi_net/" target="_blank">
+                        <Instagram className="socialIcon" />
+                      </Link>
+                      <Link href="https://twitter.com/mobi_lb" target="_blank">
+                        <Twitter className="socialIcon" />
+                      </Link>
+                    </Box>
+                    <Box component="span" class="bar__separator"></Box>
+                  </Box>
+                </Box>
+              </Box>
             </section>
+            <footer>
+              <section class="sectionContent section-padding section-no-margin" id="footer">
+                <Grid container spacing={3} className="footerGrid">
+                  <Grid item sm={4} xs={12} md={4}>
+                    <Typography component="h5" variant="body1" className="footerHeading">Contact us</Typography>
+                    <List component="ul" className="contactList" disableGutters={true}>
+                      <ListItem disableGutters={true}>
+                        <ListItemText primary={
+                          <React.Fragment>
+                            <Typography component="span" variant="body2">
+                              Bshamoun al madaris,Andalus Street,Ground floor Beirut Lebanon
+                            </Typography>
+                          </React.Fragment>
+                        } />
+                      </ListItem>
+                    </List>
+                  </Grid>
+                  <Grid item sm={8} xs={12} md={8}>
+                    <Typography component="h5" variant="body1">About us</Typography>
+                    <List component="ul" disableGutters={true}>
+                      <ListItem disableGutters={true} >
+                        <ListItemText primary="Bshamoun al madaris,Andalus Street,Ground floor Beirut Lebanon" />
+                      </ListItem>
+                    </List>
+                  </Grid>
+                </Grid>
+              </section>
+            </footer>
+            <Box>
+              <Typography component="p" class="credits footer-mobile-credits">
+                <Link href="http://koein.com" target="_blank"> By Ⓚ X-net</Link>
+                <span> v1.0.1</span>
+              </Typography>
+            </Box>
           </main>
-          <footer>
-          </footer>
         </div>
       </div>
     </div>
