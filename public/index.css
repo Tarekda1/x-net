@@ -65,11 +65,24 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center center;
 }
 
+nav > a{
+  color: #4d4b4b !important;
+  font-weight: 500 !important;
+  font-size:16px;
+  padding:0 6px;
+  cursor: pointer;
+}
+nav > a:hover{
+  text-decoration: underline;
+}
+
 .section-title{
   display: flex;
   align-self: flex-start;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
+  font-weight: 600 !important;
+  font-size: 1.6em !important;
 }
 
 .section-padding{
@@ -229,16 +242,16 @@ h1, h2, h3, h4, h5, h6 {
 /** footer **/
 footer{
   background: #255aa8;
+  color:#eaeaea;
 }
 
 .footerHeading{
   color:white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .contactList{
-  display: list-item;
   list-style: disc !important;
   color: white;
   margin: 0px 15px !important;
@@ -248,4 +261,26 @@ footer{
  color: white;
  text-decoration: dotted;
  font-size: 13px;
+ display: list-item;
+ line-height: 1.1 !important;
+ padding:3px 0;
+}
+
+.addressItem{
+  font-size: 12px !important;
+  line-height: 12px !important;
+}
+
+.contactList > li > div{
+  margin :0;
+  padding:0;
+}
+
+.contactList > li > div > span{
+  line-height: 1.1 !important;
+  color:#eaeaea;
+}
+
+.copyRight{
+  font-size:12px;
 }

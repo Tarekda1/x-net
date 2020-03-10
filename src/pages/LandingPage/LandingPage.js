@@ -6,12 +6,14 @@ import CardContent from '@material-ui/core/CardContent'
 import Image from 'material-ui-image'
 import IconButton from '@material-ui/core/IconButton'
 import Paper from '@material-ui/core/Paper';
-import { List, ListItem, ListItemIcon, ListItemText, Divider, Box } from '@material-ui/core'
+import { List, ListItem, ListItemIcon, ListItemText, Divider, Box, Fab } from '@material-ui/core';
+import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { green } from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
 import LockIcon from '@material-ui/icons/Lock'
 import InboxIcon from '@material-ui/icons/Inbox'
 import DraftsIcon from '@material-ui/icons/Drafts';
-import { Facebook, Twitter, Instagram } from '@material-ui/icons';
+import { Facebook, Twitter, Instagram, KeyboardArrowUp } from '@material-ui/icons';
 import PhoneIcon from '@material-ui/icons/Phone'
 import React, { useEffect } from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -27,7 +29,7 @@ import messages_bs from './bs.json'
 import messages_es from './es.json'
 import messages_ru from './ru.json'
 import parseLanguages, { formatMessage } from '../../rmw-shell/utils/localeTools'
-import { Link, Container } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 
 
 const messageSources = {
@@ -265,7 +267,19 @@ const styles = theme => ({
   },
   name: {
     color: 'black'
-  }
+  },
+  fab: {
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+  },
+  fabGreen: {
+    color: theme.palette.common.white,
+    backgroundColor: green[500],
+    '&:hover': {
+      backgroundColor: green[600],
+    },
+  },
 })
 
 const LinkArrowHover = styled.a`
@@ -304,7 +318,7 @@ const match = parseLanguages(['en', 'es', 'bs', 'ru', 'de'], 'en')
 // eslint-disable-next-line react/prop-types
 const LandingPage = ({ classes, history, theme }) => {
   const messages = messageSources[match]
-
+  const preventDefault = event => event.preventDefault();
   const isAuthorised = () => {
     try {
       const key = Object.keys(localStorage).find(e => e.match(/persist:root/))
@@ -315,6 +329,10 @@ const LandingPage = ({ classes, history, theme }) => {
     } catch (ex) {
       return false
     }
+  }
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
   }
 
   useEffect(() => {
@@ -341,31 +359,22 @@ const LandingPage = ({ classes, history, theme }) => {
       <AppBar position="static" style={{ color: 'black', backgroundColor: 'transparent', boxShadow: 'none' }}>
         <Toolbar>
           <div style={{ flex: 1 }} />
-          <Link>
-            <Typography id="tooltip-icon2" title="GitHub repository" style={{ padding: '5px' }}>
-              Internet
+          <Typography id="tooltip-icon2" style={{ padding: '5px' }}>
+            <nav>
+              <Link to="services" onClick={preventDefault} spy={true} smooth={true} delay={100} duration={500}>
+                Internet
+            </Link>
+              <Link to="web-design" onClick={preventDefault} spy={true} smooth={true} delay={100} duration={880}>
+                Web Services
+            </Link>
+              <Link to="tech-news" onClick={preventDefault} spy={true} smooth={true} delay={100} duration={1000}>
+                Tech News
+            </Link>
+              <Link to="footer" onClick={preventDefault} spy={true} smooth={true} duration={1200} delay={100}>
+                Contact us
+            </Link>
+            </nav>
           </Typography>
-          </Link>
-          <Link>
-            <Typography id="tooltip-icon2" title="GitHub repository" style={{ padding: '5px' }}>
-              Web Services
-            </Typography>
-          </Link>
-          <Link>
-            <Typography id="tooltip-icon2" title="GitHub repository" style={{ padding: '5px' }}>
-              Graphic Design
-          </Typography>
-          </Link>
-          <Link>
-            <Typography id="tooltip-icon2" title="GitHub repository" style={{ padding: '5px' }}>
-              About us
-          </Typography>
-          </Link>
-          <Link>
-            <Typography id="tooltip-icon2" title="GitHub repository" style={{ padding: '5px' }}>
-              Contact us
-          </Typography>
-          </Link>
         </Toolbar>
       </AppBar>
       <div className={classes.root}>
@@ -652,7 +661,7 @@ const LandingPage = ({ classes, history, theme }) => {
                 </Grid>
               </Grid>
             </section>
-            <section class="sectionContent section-padding section-no-margin" id="web-design">
+            <section class="sectionContent section-padding section-no-margin" id="tech-news">
               <Box class="section-header">
                 <Typography component="h2" variant="h2" class="section-title">Latest Tech News</Typography>
               </Box>
@@ -788,32 +797,60 @@ const LandingPage = ({ classes, history, theme }) => {
                       <ListItem disableGutters={true}>
                         <ListItemText primary={
                           <React.Fragment>
-                            <Typography component="span" variant="body2">
+                            <Typography component="span" variant="body2" className="addressItem">
                               Bshamoun al madaris,Andalus Street,Ground floor Beirut Lebanon
                             </Typography>
+                          </React.Fragment>
+                        } />
+                      </ListItem>
+                      <ListItem disableGutters={true}>
+                        <ListItemText primary={
+                          <React.Fragment>
+                            <Typography component="span" variant="body2"  >
+                              Mobile Number: 96170223101
+                          </Typography>
+                          </React.Fragment>
+                        } />
+                      </ListItem>
+                      <ListItem disableGutters={true}>
+                        <ListItemText primary={
+                          <React.Fragment>
+                            <Typography component="span" variant="body2" className="addressItem">
+                              Email: x-net@gmail.com
+                          </Typography>
                           </React.Fragment>
                         } />
                       </ListItem>
                     </List>
                   </Grid>
                   <Grid item sm={8} xs={12} md={8}>
-                    <Typography component="h5" variant="body1">About us</Typography>
-                    <List component="ul" disableGutters={true}>
+                    <Typography component="h5" variant="body1" className="footerHeading">About us</Typography>
+                    <List component="ul" className="contactList" disableGutters={true}>
                       <ListItem disableGutters={true} >
-                        <ListItemText primary="Bshamoun al madaris,Andalus Street,Ground floor Beirut Lebanon" />
+                        <ListItemText primary={
+                          <React.Fragment>
+                            <Typography component="span" variant="body2" className="addressItem">
+                              An internet company covering mount lebanon, we have different packages to statisfies internet need to all kind of customers.
+                              We have very good support team, and ready to support you 12 hours per day.
+                          </Typography>
+                          </React.Fragment>} />
                       </ListItem>
                     </List>
                   </Grid>
                 </Grid>
               </section>
             </footer>
-            <Box>
-              <Typography component="p" class="credits footer-mobile-credits">
-                <Link href="http://koein.com" target="_blank"> By Ⓚ X-net</Link>
-                <span> v1.0.1</span>
-              </Typography>
-            </Box>
+            <section class="sectionContent section-padding section-no-margin" style={{ padding: '3px 50px' }} id="copyright">
+              <Box>
+                <Typography component="p" className="credits footer-mobile-credits" style={{ margin: '10px 0' }}>
+                  <Link href="http://x-net.com" className="copyRight" target="_blank">By X-net. All rights preseved.</Link>
+                </Typography>
+              </Box>
+            </section>
           </main>
+          <Fab aria-label="up" className={classes.fab} onClick={() => { scrollToTop(); }} color="primary">
+            <KeyboardArrowUp />
+          </Fab>
         </div>
       </div>
     </div>
